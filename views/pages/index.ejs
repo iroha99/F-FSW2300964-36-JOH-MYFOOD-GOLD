@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('../layout/head') %>
+</head>
+<body>
+    <%- include('../layout/nav') %>
+    <div class="container">
+        <div class="row kotak">
+            <div align="center">
+                <h1>Menu</h1>
+            </div>
+            <% data.forEach(function(data) { %>
+                <% if (data.tipe =='Makanan') { %>
+                    <% var link = "https://a.cdn-hotels.com/gdcs/production0/d1513/35c1c89e-408c-4449-9abe-f109068f40c0.jpg?impolicy=fcrop&w=800&h=533&q=medium" %> 
+                    <% } %>
+                <% if (data.tipe == 'Minuman') { %>
+                    <% var link = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR89OIfTxPM6JeCmATFoUx7pjXaOIOG-LMjYxkiHGNl_PAp4GpwB6JeUmgr5s4GrkNmTek&usqp=CAU" %>
+                <% } %>
+            <div class="col-4">
+                <div class="card" style="width: 18rem; margin: 10px 10px;">
+                    <img id="img" width="300" height="170" src="<%= link %>" class="card-img-top" alt="...">
+                    <div class="card-body konten">
+                        Kategori: <b><%= data.tipe %></b>
+                    </div>
+                    <div class="card-body isi">
+                      <h5 class="card-title">Nama: <%= data.nama %></h5>
+                      <p class="card-text"> <b>Stok: <%= data.stok %></b></p>
+                      <p class="card-text"> <b>Harga: Rp.<%= data.harga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") %></b></p>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+        <br>
+    </div>
+
+</body>
+
+<footer>
+    <%- include('../layout/footer'); %>
+</footer>
+</html>
+
+<script>
+</script>

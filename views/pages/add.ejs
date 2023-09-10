@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('../layout/head') %>
+</head>
+<body>
+    <%- include('../layout/nav') %>
+
+    <div class="container">
+        <div class="formawal">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col formbaru">
+                    <form method="post" action="/api/foods">
+                        <div class="mb-3">
+                          <label for="nama" class="form-label">Nama</label>
+                          <input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama">
+                          <div id="nama" class="form-text">Input nama.</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="harga" class="form-label">Input Harga</label>
+                          <input type="text" name="harga" class="form-control" id="harga" aria-describedby="harga">
+                          <div id="harga" class="form-text">Input harga.</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="stok" class="form-label">Input Stok</label>
+                          <input type="text" name="stok" class="form-control" id="stok" aria-describedby="stok">
+                          <div id="emailHelp" class="form-text">Input stok.</div>
+                        </div>
+                        <div class="mb-3">
+                            <select name="tipe" class="form-select" aria-label="Default select example">
+                                <option selected>Pilih Jenis</option>
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                            </select>
+                            <div id="tipe" class="form-text">Input kategori.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+    <%- include('../layout/footer'); %>
+</footer>
+</html>
