@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const db = require('./db/db')
+const foodModel = require('./models/foodModel')
 const foodController = require('./controllers/foodController')
 
 app.set('view engine','ejs')
@@ -12,7 +13,7 @@ app.use(router)
 
 
 app.get('/', async (req,res) => {
-    const data = await db.select('*').from('food')
+    const data = await foodModel.getAllFood();
     res.render('./pages/index', {
         data:data
     })
